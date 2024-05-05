@@ -29,26 +29,25 @@ const Login = () => {
   return (
     <>
       {redirect && <Navigate to="/" />}
-      <DeafaultLayout>
-        <form className="form" onSubmit={handleSubmit}>
-          <h1>Login</h1>
-          <label>Correo</label>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
 
-          <label>Clave</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+      <form className="form" onSubmit={handleSubmit}>
+        <h1>Login</h1>
+        <label>Correo</label>
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-          <button type="submit">Login</button>
-        </form>
-      </DeafaultLayout>
+        <label>Clave</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button type="submit">Login</button>
+      </form>
     </>
   );
 };
