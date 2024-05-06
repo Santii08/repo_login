@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <div>
       <DeafaultLayout>
-        <h1>Este es el contacto</h1>
+        <h1>Contact</h1>
         <button onClick={handleLogout}>Logout</button>
       </DeafaultLayout>
     </div>

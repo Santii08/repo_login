@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div>
       <DeafaultLayout>
-        <h1>ESTE ES EL HOME</h1>
+        <h1>Home</h1>
         <button onClick={handleLogout}>Logout</button>
       </DeafaultLayout>
     </div>

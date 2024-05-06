@@ -16,7 +16,7 @@ export const AuthContext = createContext<AuthContextType>({
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(() => {
-    // Obtener el estado de autenticación desde localStorage al inicializar el componente
+    // Obtener el estado de autenticación desde localStorage solo si está presente
     const isAuthenticatedFromStorage = localStorage.getItem("isAuthenticated");
     return isAuthenticatedFromStorage
       ? JSON.parse(isAuthenticatedFromStorage)
@@ -24,8 +24,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
   });
 
   useEffect(() => {
-    // Actualizar el estado de autenticación en localStorage cuando cambie
-    localStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated));
+    // Solo actualiza el estado de autenticación en localStorage si está autenticado
+    if (isAuthenticated) {
+      localStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated));
+    } else {
+      // Si no está autenticado, elimina el estado de autenticación del localStorage para no poder cambiarlo a true
+      localStorage.removeItem("isAuthenticated");
+    }
   }, [isAuthenticated]);
 
   return (

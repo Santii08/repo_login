@@ -18,7 +18,6 @@ const Login = () => {
       setRedirect(true);
     } else {
       // Si el correo no es correcto, puedes mostrar un mensaje de error o realizar otras acciones
-      setIsAuthenticated(false);
     }
 
     // Limpieza de los campos después del envío del formulario

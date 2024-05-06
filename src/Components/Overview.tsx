@@ -11,7 +11,7 @@ const Overview = () => {
   return (
     <div>
       <DeafaultLayout>
-        <h1>INFORMACION DE NUESTRA PAGINA</h1>
+        <h1>Overview</h1>
         <button onClick={handleLogout}>Logout</button>
       </DeafaultLayout>
     </div>
